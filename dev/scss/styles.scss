@@ -1,0 +1,112 @@
+body{
+    font-family: sans-serif;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background:linear-gradient(
+        to bottom right,
+        purple 0%,
+        salmon 100%
+    );
+}
+
+.calculator{
+   width: 350px;
+   height: 500px;
+   background: transparent;
+   border-radius: 15px;
+   position: relative;
+
+   &::after{
+       content: "";
+       display: block;
+       position: absolute;
+       top: 0;
+       width: 100%;
+       height: 100%;
+       border-radius: 15px;
+       box-shadow: 0 10px 20px black;
+       opacity: .3;
+   }
+}
+
+.top-bar{
+    width: 100%;
+    height: 50px;
+    background: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 2rem;
+    border-bottom: 1px solid grey;
+    border-radius: 15px 15px 0 0;
+
+    &::before{
+        content: "";
+        position: absolute;
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: green;
+        border-radius:50%;
+        box-shadow: 20px 0 0 grey,
+                    -20px 0 0 red; 
+    }
+}
+
+.screen{
+    width: 100%;
+    height: 120px;
+    text-align: right;
+    padding-right: 1rem;
+    padding-top: .5rem;
+    background: white;
+
+    &__top{
+        font-size: 1.5rem;
+    }
+
+    &__content{
+        font-size: 4rem;
+    }
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 5px;
+    margin-top: 5px;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    font-size: 1.21rem;
+    background: white;
+    position: relative;
+    z-index: 100;
+
+    &:nth-child(4n){
+        background: lightsalmon;
+    }
+
+    &:nth-child(17){
+        border-bottom-left-radius:15px; 
+    }
+
+    &:last-child{
+        border-bottom-right-radius:15px; 
+    }
+
+    &:not(:nth-child(18)):hover{
+        background: lightgreen;
+        cursor: pointer;
+    }
+}
